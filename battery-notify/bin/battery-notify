@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# battery-notify 
+#
+#   Let me know when I have to run to the charger
+set -euo pipefail
+
+function current_power_level() {
+    local powerlevel="$(acpi -b | grep 'Battery 0' | grep -o '[0-9]\+%' | tr -d '%')"
+    echo "$powerlevel"
+    
+}
+
+function power_notify() {
+    local expire_time=60000
+    local msg="$1"
+    local urgency="$2"
+    notify-send -u "$urgency" -t  "$expire_time" Battery "$msg"
+}
+
+function power_range() {
+    local high="$1"
+    local  low="$2"
+    if [ "$(current_power_level)" -le "$high" -a "$(current_power_level)" -gt "$low" ]; then
+        return 0; 
+    else
+        return 1;
+    fi
+}
+
+function main() {
+    power_range "15" "10" && power_notify "Level is below 15%" "normal"
+    power_range "10" "5"  && power_notify "Level is below 10%" "critical"
+    power_range "5" "0"   && power_notify "Level is below 5%" "critical"
+    exit 0
+}
+
+main

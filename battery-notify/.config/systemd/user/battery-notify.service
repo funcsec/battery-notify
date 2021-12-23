@@ -1,0 +1,9 @@
+[Unit]
+Description=Notification of low battery
+
+[Service]
+Type=simple
+ExecStart=%h/bin/battery-notify
+
+[Install]
+WantedBy=default.target
