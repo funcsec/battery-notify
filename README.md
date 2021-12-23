@@ -1,12 +1,5 @@
 <div id="top"></div>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
 <h3 align="center">Battery Notify</h3>
 
   <p align="center">
@@ -48,7 +41,7 @@ Very simple script and systemd timer/service for notifying you when your laptop 
 
 Great for using [i3wm](https://i3wm.org/) or other minimal windows managers that lack desktop environment perks.
 
-Timer runs every 5 minutes and notifies when the battery life drops below 15%. Does not Suspend or Hibernate computer, runs with user priviledges. 
+Timer runs every 5 minutes and notifies when the battery life drops below 15%. *Does not Suspend or Hibernate* computer, runs with user priviledges. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -66,8 +59,7 @@ Timer runs every 5 minutes and notifies when the battery life drops below 15%. D
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Here is to get the project up and running to monitor and alert you when you battery is low. 
 
 ### Prerequisites
 
